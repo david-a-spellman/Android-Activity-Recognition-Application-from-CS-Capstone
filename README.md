@@ -1,4 +1,12 @@
-The aim of the project is to provide an end-to-end solution for on-device training, inference and data collection for activity recognition based on <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/model_personalization">TFlite Transfer Learning Pipeline</a>. The corresponding blog post is available <a href="https://aqibsaeed.github.io/on-device-activity-recognition">here</a>. 
+### Android Activity Recognition Application
+* Worked on during Fall 2021 Pitt semester under Dr. Stephen Lee in CS department
+* Produced the app for running activity recognition related experiments on assessing solutions to privacy concerns
+* Was the primary contributor
+* Worked in a team with two other students
+* URL of original repo with the full change tracking history: <a href="https://github.com/stephenlee86/harapp">here</a>
+* Primary contributions made were data collection and storage, the recycler view for managing data, the graph view activity, and helping to write the main activity. 
+
+*** The aim of the project is to provide an end-to-end solution for on-device training, inference and data collection for activity recognition based on <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/model_personalization">TFlite Transfer Learning Pipeline</a>. The corresponding blog post is available <a href="https://aqibsaeed.github.io/on-device-activity-recognition">here</a>. ***
 
 #### Tools Required
 * [Python 3.5+](https://www.python.org)
