@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\47a7794b96fa1f3e8f6807e08299ed7c\\transformed\\core-1.0.1\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\25931cf2752aebd1d2da135698d75b0f\\transformed\\appcompat-1.0.2\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\25931cf2752aebd1d2da135698d75b0f\\transformed\\appcompat-1.0.2\\res\\drawable-v21\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\abc_list_divider_material.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\25931cf2752aebd1d2da135698d75b0f\\transformed\\appcompat-1.0.2\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\25931cf2752aebd1d2da135698d75b0f\\transformed\\appcompat-1.0.2\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\25931cf2752aebd1d2da135698d75b0f\\transformed\\appcompat-1.0.2\\res\\drawable-v21\\abc_edit_text_material.xml"
+    }
+]

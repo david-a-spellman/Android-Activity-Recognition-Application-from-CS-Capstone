@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 7.0.2" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.string.app_name"
+            file="$TRANSFER_API/src/main/res/values/strings.xml"
+            line="2"
+            column="11"
+            startOffset="23"
+            endLine="2"
+            endColumn="26"
+            endOffset="38"/>
+        <entry
+            name="model"
+            string="string[app_name(D)];;;;"/>
+    </map>
+
+</incidents>
