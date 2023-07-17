@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\47a7794b96fa1f3e8f6807e08299ed7c\\transformed\\core-1.0.1\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\47a7794b96fa1f3e8f6807e08299ed7c\\transformed\\core-1.0.1\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\47a7794b96fa1f3e8f6807e08299ed7c\\transformed\\core-1.0.1\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Capstone\\ActivityRecognitionApp\\android\\transfer_api\\build\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\David\\.gradle\\caches\\transforms-3\\47a7794b96fa1f3e8f6807e08299ed7c\\transformed\\core-1.0.1\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]

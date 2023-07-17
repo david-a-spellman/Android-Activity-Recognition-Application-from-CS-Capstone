@@ -1,0 +1,90 @@
+The first thing to note in the code is the enum that defines the four modes, data collection, training, and inference
+Then there is the main activity class definition that implements the SensorEventListener interface and that inherits from the AppCompatActivity class
+The first part of the definition contains all the class variables such as the sample count, model name, VB threshold, counts of the instances of classes A and B, a boolean for checking to see if collection is running, a senser manager, declarations for both accelerometer and gyroscope,
+a transfer learning model wrapper, a string for class ID, lists for x, y, and z axies for accelerometer that will be shared across all instances of this class, the same set of three static lists for gyroscope, a single static list for input signals--this is likely for touch screen input, but it could also hold aditional input information for both accelerometer and gyroscope input,
+a variable of the mode enum type, a start button and a stop button, text views for both class A and class B--likely the text labels for the spinner that allows you to choose between the two classes for labeling, then there is instance text views for both which must display the labeling counts for both classes,
+a text view for the loss value--likely gets displayed either on traning or inference screen, then it defines two spinners or drop downs--one for the classes and another for options, a vibrater is also declared here,
+Then comes the definition of the overrided on create function that takes a Bundle object as its only arguement
+It first invokes the implementation of the super class and then calls setContentView on R.layout.activity_main
+next it calls the get system service function and casts the result to a vibrater object and assigns it to the vibrater variable
+Then it also assigns button objects to the two button variables and uses the findViewByID function to get the apropriate view for a button
+The start button starts enabled, while a method is invoked to set the stop button to be disabled to begin with
+Then all the text view variables are initialized with TextView objects by getting all their views by ID with the same function used to get the views for the buttons
+same thing is done for both spinners
+We will have to add more code here if we want to add more UI functionality since this does all the set up
+Then an array adapter object templated as a character sequence is declared and initialized from ArrayAdapter.createFromResource () which takes the main activity object, the R.array.options_array, and R.layout.spinner_item as arguements
+At this point it is not yet clear what R.layout or R.array are
+After optionAdapter is initialized the set dropdown view resource method is called on it, taking as arguement a layout for a simple spinner dropdown item
+This reveals that android.R is part of the android API where you can get data for the UI functionality from
+The optionAdapter is then assigned to the option spinner using the set adapter method
+The adapter must determine the characteristics of the spinner such as its graphical characteristics, items, and what state it is in
+The same exact code is repeated for the class spinner
+If this interpretation is correct these spinners should be of the same drop down type, but should function independantly since they are being assigned different adapters
+Now the x, y, and z list variables are initialized with list objects of type float for both the accelerometer and gyroscope
+Same thing with the input signal
+The system service calls are also performed for the sensor manager variable 
+Then the two sensor variables can have the sensors for their respective types allocated to them by calling the getDefaultSensor method on the sensor manager with Sensor.TYPE_... as the arguement
+Next the sensor manager object is used to register listeners for both sensor types
+Three arguments are passed to the register listener method, the main activity object, the sensor variable, and a sensor value obtained from the sensor manager class that in this case sets each of the sensors to delay fastests
+This registers the class as a listener and the OS will route the input from these sensors to this class, and delay fastest specifies that this will be done as freequently as possible to get the highest resolution data
+Then the transfer learning model variable is initialized with its constructer that is passed the result of the getApplicationContext function call
+The set on item selected listener method is called on the option spinner and the arguement passed to it is a new on item selected listener object that is then treated as an extension to the ONITEMSelectedListener class and the code goes on to override methods of this class inside of the function call taking this extended class as arguement
+The on selected method is overided and takes a templated adapter view object as the parent parameter, a view object parameter, an int as the possition parameter, and a long as the ID parameter
+The possition arguement is then used to get the item from the parent object at that possition
+This item is then stored as the option variable of type string
+The option variable is then used in a switch statement to determine whether the app is currently in data collection, training, or inference mode
+This is where the mode enum comes into play, and it is assigned one of these through the switch statement
+If it meets none of these arguments it throws an invalid app mode exception
+Next the on nothing selected method is overrided and it takes only the parent adapter view object as parameter
+The same methods are then overrided for the class spinner as well
+In the class spinner on item selected the classID variable is assigned a string based on the possition in the parent adapter view
+Once again nothing is performed in the overrided method for the nothing selected method
+After these methods are overrided for both spinners the start button has the set on click listener method called on it to set its view to a new on click listener view that then has some methods overrided just like with the spinners
+The first method overrided is the onclick which takes the view as parameter
+The start button is disabled first in this method
+The stop button is enabled
+The option spinner is disabled since data collection has now begun
+The is running flag is set to true since data collection has now begun
+The model is now loaded that data collection has started
+The code to load an existing model is currently commented out however
+The is running flag is what the event handler will check to see if the sensor input should be collected or ignored
+The on click is then also overrided for the stop button
+This sets the start button to enabled, disables the stop button, enables the option spinner, sets the is running flag to false, and if it is in training mode model training is disabled
+If the following lines are uncommented the model will be saved
+On pause calls the implementation of the super class and then unregisters the listener used by the sensor manager by passing the current object to the unregister method 
+On resume once again calls the implementation of the super class and then registers the listeners for both sensors again as doen previously, and once again uses delay fastest to get the highest resolution sensor data possible
+On destroy calls super and then closes the training model, and sets both the tlmodel and sensor manager to NULL
+Next the on sensor change method is overrided
+A sensor event object is the only parameter
+A switch is used on the sensor event to get the type of sensor event
+There is a case for both accelerometer and gyroscope
+In these cases the event values for the respective axies are added to the respective lists for the sensor type and the axis of that sensor type
+event.values must be an array of floats in this order; x, y, and then z
+So as events occur for these two sensor types the lists are populated with floats
+This method also then checks to see if all lists have now collected a number of floats equal to the sample size variable originally initialized to 400, and if so the data is processed with the process_input () function
+The on accuracy changed function is also overrided but there is not yet an implementation for it
+The input signal list is actually not for touch screen input, it is used in the process input method
+It is populated with all data collected in the other six lists
+The input signal list of floats is then used to create an array of floats instead
+Then an if statement checks to see if the is running flag is true, and also checks to see if we are in training mode
+It also checks to see if the two class counts are greater than or equal to batch size
+If all of these are true training is enabled
+The enable training method then creates a runnable object inside of it called run on UI thread which captures the variables epoch and loss as variables available globaly to it
+The run method on this object is then overrided
+In this overrided run method the text view is set for the lost text view
+then if the previous condition was not met we hit the else case, that creates a string message that says the batch size was not met for the classes
+Then Toast is used to display the string message and stop button has the call on click method called on it
+If the mode is data collection then add sample is called on the training model and both the input array of floats and the class ID are passed to it
+So now the model has the sensor data as well as the class it is labeled with
+After being added to the model then either the class A instance count or class B instance count is incremented
+Then the class A and B text views are set to text corresponding to the strings of their instance counts
+Finally in the inference case predict is called on the model and the input array is passed to it
+The phone will vibrate if the model infers that class B has been detected
+However, first the confidence determined by the model will be checked against the VB_threshold value
+If it is above the VB threshold then the phone vibrates
+Then the class A and B text views are set to their confidence strings obtained from the inference
+Lastly all six of the collection lists are cleared, as well as the input signal list
+Then is the implementation of the to float array method 
+All it does is create a float array that is the same size as the list passed to it, and then it coppies the items in the list into the float array, and then returns the float array
+Then there is also a method for rounding floats
+All it does is round a float to a certain decimal
